@@ -1,7 +1,7 @@
 (function () {
 
   // XXXTIM Make sure this is being called
-  Accounts.oauth.registerService = function (name, version, handleOauthRequest) {
+  Accounts.oauth.registerService = function (name) {
     // Accounts.updateOrCreateUserFromExternalService does a lookup by this id,
     // so this should be a unique index. You might want to add indexes for other
     // fields returned by your service (eg services.github.login) but you can do
