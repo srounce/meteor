@@ -11,7 +11,7 @@
           loginButtonsSession.closeDropdown();
         } else if (err instanceof Accounts.LoginCancelledError) {
           // do nothing
-        } else if (err instanceof Accounts.ConfigError) {
+        } else if (err instanceof ServiceConfiguration.ConfigError) {
           loginButtonsSession.configureService(serviceName);
         } else {
           loginButtonsSession.errorMessage(err.reason || "Unknown error");
@@ -31,7 +31,7 @@
   });
 
   Template._loginButtonsLoggedOutSingleLoginButton.configured = function () {
-    return !!Accounts.loginServiceConfiguration.findOne({service: this.name});
+    return !!ServiceConfiguration.configurations.findOne({service: this.name});
   };
 
   Template._loginButtonsLoggedOutSingleLoginButton.capitalizedName = function () {

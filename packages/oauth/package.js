@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Common Accounts code for OAuth-based services",
+  summary: "Common code for OAuth-based services",
   internal: true
 });
 

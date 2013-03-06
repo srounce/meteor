@@ -6,9 +6,9 @@
       options = {};
     }
 
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'facebook'});
+    var config = ServiceConfiguration.configurations.findOne({service: 'facebook'});
     if (!config) {
-      callback && callback(new Accounts.ConfigError("Service not configured"));
+      callback && callback(new ServiceConfiguration.ConfigError("Service not configured"));
       return;
     }
 

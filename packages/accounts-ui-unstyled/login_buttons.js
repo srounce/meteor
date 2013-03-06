@@ -140,11 +140,11 @@
       var match;
       if ((match = methodName.match(/^loginWith(.*)/))) {
         var serviceName = match[1].toLowerCase();
-
         // HACKETY HACK. needed to not match
         // Meteor.loginWithToken. See XXX above.
         if (Accounts[serviceName])
           services.push(match[1].toLowerCase());
+
       }
     });
 

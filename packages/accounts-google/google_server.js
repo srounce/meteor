@@ -36,9 +36,9 @@
   // - expiresIn: lifetime of token in seconds
   // - refreshToken, if this is the first authorization request
   var getTokens = function (query) {
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'google'});
+    var config = ServiceConfiguration.configurations.findOne({service: 'google'});
     if (!config)
-      throw new Accounts.ConfigError("Service not configured");
+      throw new ServiceConfiguration.ConfigError("Service not configured");
 
     var result = Meteor.http.post(
       "https://accounts.google.com/o/oauth2/token", {params: {

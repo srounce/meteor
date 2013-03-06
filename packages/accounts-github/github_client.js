@@ -6,9 +6,9 @@
       options = {};
     }
 
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'github'});
+    var config = ServiceConfiguration.configurations.findOne({service: 'github'});
     if (!config) {
-      callback && callback(new Accounts.ConfigError("Service not configured"));
+      callback && callback(new ServiceConfiguration.ConfigError("Service not configured"));
       return;
     }
     var state = Random.id();

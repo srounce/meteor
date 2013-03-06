@@ -1,1 +1,2 @@
-Accounts.oauth = {};
+if (typeof Accounts.oauth === 'undefined')
+  Accounts.oauth = {};

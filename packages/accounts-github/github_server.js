@@ -16,9 +16,9 @@
   });
 
   var getAccessToken = function (query) {
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'github'});
+    var config = ServiceConfiguration.configurations.findOne({service: 'github'});
     if (!config)
-      throw new Accounts.ConfigError("Service not configured");
+      throw new ServiceConfiguration.ConfigError("Service not configured");
 
     var result = Meteor.http.post(
       "https://github.com/login/oauth/access_token", {headers: {Accept: 'application/json'}, params: {

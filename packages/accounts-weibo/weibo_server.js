@@ -16,9 +16,9 @@
   });
 
   var getAccessToken = function (query) {
-    var config = Accounts.loginServiceConfiguration.findOne({service: 'weibo'});
+    var config = ServiceConfiguration.configurations.findOne({service: 'weibo'});
     if (!config)
-      throw new Accounts.ConfigError("Service not configured");
+      throw new ServiceConfiguration.ConfigError("Service not configured");
 
     var result = Meteor.http.post(
       "https://api.weibo.com/oauth2/access_token", {params: {

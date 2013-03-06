@@ -3,8 +3,8 @@ Tinytest.add("oauth2 - loginResultForState is stored", function (test) {
   var foobookId = Random.id();
   var state = Random.id();
 
-  if (!Accounts.loginServiceConfiguration.findOne({service: 'foobook'}))
-    Accounts.loginServiceConfiguration.insert({service: 'foobook'});
+  if (!ServiceConfiguration.configurations.findOne({service: 'foobook'}))
+    ServiceConfiguration.configurations.insert({service: 'foobook'});
   Accounts.foobook = {};
 
   try {
@@ -45,8 +45,8 @@ Tinytest.add("oauth2 - error in user creation", function (test) {
   var state = Random.id();
   var failbookId = Random.id();
 
-  if (!Accounts.loginServiceConfiguration.findOne({service: 'failbook'}))
-    Accounts.loginServiceConfiguration.insert({service: 'failbook'});
+  if (!ServiceConfiguration.configurations.findOne({service: 'failbook'}))
+    ServiceConfiguration.configurations.insert({service: 'failbook'});
   Accounts.failbook = {};
 
   try {
